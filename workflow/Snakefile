@@ -1,0 +1,27 @@
+
+include: "rules/common.smk"
+include: "rules/ascp_ccs.smk"
+include: "rules/ascp_ccs_md5.smk"
+include: "rules/edit_md5.smk"
+include: "rules/md5dum_check_ccs.smk"
+include: "rules/seqkit.smk"
+include: "rules/zcat_ccs.smk"
+include: "rules/jellyfish_count.smk"
+include: "rules/jellyfish_merge.smk"
+
+rule all:
+    input:
+        expand(
+            "results/seqkit_stats/{sample}.tsv",
+            sample=sample_data.index.tolist(),
+        ),
+        expand(
+            "results/md5sum_check/{sample}.txt",
+            sample=sample_data.index.tolist(),
+        ),
+        expand(
+            "results/jellyfish/{sample}.jf",
+            sample=sample_data.index.tolist(),
+        ),
+        "results/jellyfish/merge.jf"
+
