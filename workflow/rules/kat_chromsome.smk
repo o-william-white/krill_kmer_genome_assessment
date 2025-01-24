@@ -1,19 +1,20 @@
-rule kat_chromsome:
+rule kat_chromosome:
     input:
-        "results/zcat_ccs/ccs.fasta.gz"
+        ccs="results/jellyfish/merge.jf",
+        gen="results/jellyfish/krill.chromosome.jf"
     output:
         "results/kat_chromosome/kat-main.mx.spectra-cn.png",
     conda:
-        "workflow/envs/kat.yaml"
+        "../envs/kat.yaml"
     log:
-        "logs/results/kat_chromomsome.log",
-    threads: 16
+        "logs/kat/kat_chromosome.log",
+    threads: 6
     shell:
         """
         kat comp \
-            -t 16 \
+            -t 6 \
             -o results/kat_chromosome/kat \
-            {input} \
-            ../data_krill_chromosome_assemblies/krill.chromosome.fa.gz &> {log}
+            {input.ccs} \
+            {input.gen} &> {log}
         """
 

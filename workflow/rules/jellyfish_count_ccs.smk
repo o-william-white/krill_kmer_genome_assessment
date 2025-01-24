@@ -1,4 +1,4 @@
-rule jellyfish_count:
+rule jellyfish_count_ccs:
     input:
         "results/ascp/{sample}.fastq",
     output:
@@ -6,9 +6,9 @@ rule jellyfish_count:
     log:
         "logs/jellyfish/{sample}.log",
     conda:
-        "../envs/jellyfish.yaml"
+        "../envs/kat.yaml"
     threads: 6
     shell:
         """
-        jellyfish count -m 27 -s 100M --disk -t 6 -C -o {output} {input} &> {log}
+        kat_jellyfish count -m 27 -s 100M --disk -t 6 -C -o {output} {input} &> {log}
         """

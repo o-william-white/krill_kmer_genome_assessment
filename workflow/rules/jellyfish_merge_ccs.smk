@@ -1,4 +1,4 @@
-rule jellyfish_merge:
+rule jellyfish_merge_ccs:
     input:
         expand(
             "results/jellyfish/{sample}.jf",
@@ -9,9 +9,9 @@ rule jellyfish_merge:
     log:
         "logs/jellyfish/merge.log",
     conda:
-        "../envs/jellyfish.yaml"
+        "../envs/kat.yaml"
     threads: 1
     shell:
         """
-        jellyfish merge -o {output} {input} &> {log}
+        kat_jellyfish merge -o {output} {input} &> {log}
         """

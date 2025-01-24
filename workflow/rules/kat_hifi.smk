@@ -1,19 +1,20 @@
 rule kat_hifi:
     input:
-        "results/zcat_ccs/ccs.fasta.gz"
+        ccs="results/jellyfish/merge.jf",
+        gen="results/jellyfish/krill.hifiasm-assembly.jf"
     output:
         "results/kat_hifi/kat-main.mx.spectra-cn.png",
     conda:
-        "workflow/envs/kat.yaml"
+        "../envs/kat.yaml"
     log:
-        "logs/results/kat_hifi.log",
-    threads: 16
+        "logs/kat/kat_hifi.log",
+    threads: 6
     shell:
         """
         kat comp \
-            -t 16 \
+            -t 6 \
             -o results/kat_hifi/kat \
-            {input} \
-            ../data_krill_chromosome_assemblies/krill.hifiasm-assembly.fa.gz &> {log}
+            {input.ccs} \
+            {input.gen} &> {log}
         """
 
