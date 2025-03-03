@@ -1,6 +1,6 @@
 rule kat_hifi:
     input:
-        ccs="results/jellyfish/merge.jf",
+        ccs="results/jellyfish/ccs.jf",
         gen="results/jellyfish/krill.hifiasm-assembly.jf"
     output:
         "results/kat_hifi/kat-main.mx.spectra-cn.png",

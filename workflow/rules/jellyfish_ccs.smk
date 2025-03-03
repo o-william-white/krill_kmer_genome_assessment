@@ -2,7 +2,7 @@ rule jellyfish_count_ccs:
     input:
         "results/zcat_ccs/ccs.fastq",
     output:
-        temp("results/jellyfish/ccs.jf"),
+        "results/jellyfish/ccs.jf",
     log:
         "logs/jellyfish/ccs.log",
     conda:

@@ -5,9 +5,8 @@ include: "rules/ascp_ccs_md5.smk"
 include: "rules/edit_md5.smk"
 include: "rules/md5dum_check_ccs.smk"
 include: "rules/seqkit.smk"
-include: "rules/gunzip_ccs.smk"
+include: "rules/zcat_ccs.smk"
 include: "rules/jellyfish_count_ccs.smk"
-include: "rules/jellyfish_merge_ccs.smk"
 include: "rules/gunzip_hifi.smk"
 include: "rules/gunzip_chromosome.smk"
 include: "rules/jellyfish_count_hifi.smk"
@@ -25,7 +24,6 @@ rule all:
             "results/md5sum_check/{sample}.txt",
             sample=sample_data.index.tolist(),
         ),
-        "results/jellyfish/merge.jf",
         "results/kat_hifi/kat-main.mx.spectra-cn.png",
         "results/kat_chromosome/kat-main.mx.spectra-cn.png",
 
