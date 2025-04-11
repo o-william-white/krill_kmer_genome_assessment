@@ -1,12 +1,15 @@
 
 include: "rules/common.smk"
-include: "rules/ascp_ccs.smk"
-include: "rules/ascp_ccs_md5.smk"
-include: "rules/edit_md5.smk"
-include: "rules/md5dum_check_ccs.smk"
+include: "rules/ascp_forward_md5.smk"
+include: "rules/ascp_reverse_md5.smk"
+include: "rules/ascp_forward.smk"
+include: "rules/ascp_reverse.smk"
+include: "rules/md5dum_check_forward.smk"
+include: "rules/md5dum_check_reverse.smk"
+include: "rules/zcat_reads.smk"
+
 include: "rules/seqkit.smk"
-include: "rules/zcat_ccs.smk"
-include: "rules/jellyfish_count_ccs.smk"
+include: "rules/jellyfish_count_reads.smk"
 include: "rules/gunzip_hifi.smk"
 include: "rules/gunzip_chromosome.smk"
 include: "rules/jellyfish_count_hifi.smk"
@@ -16,12 +19,14 @@ include: "rules/kat_chromsome.smk"
 
 rule all:
     input:
+        "results/zcat_reads/reads.fastq",
+        "results/seqkit_stats/reads.tsv",
         expand(
-            "results/seqkit_stats/{sample}.tsv",
+            "results/md5sum_check/{sample}_R1.txt",
             sample=sample_data.index.tolist(),
         ),
         expand(
-            "results/md5sum_check/{sample}.txt",
+            "results/md5sum_check/{sample}_R2.txt",
             sample=sample_data.index.tolist(),
         ),
         "results/kat_hifi/kat-main.mx.spectra-cn.png",

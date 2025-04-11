@@ -1,0 +1,39 @@
+K-mer statistics for: 
+ - Hash 1: "results/jellyfish/reads.jf"
+ - Hash 2: "results/jellyfish/krill.chromosome.jf"
+
+Total K-mers in: 
+ - Hash 1: 1311974011153
+ - Hash 2: 34139568409
+
+Distinct K-mers in:
+ - Hash 1: 136659941598
+ - Hash 2: 16140578798
+
+Total K-mers only found in:
+ - Hash 1: 916151852898
+ - Hash 2: 17572819556
+
+Distinct K-mers only found in:
+ - Hash 1: 130567626072
+ - Hash 2: 3956717916
+
+Shared K-mers:
+ - Total shared found in hash 1: 395822158255
+ - Total shared found in hash 2: 8284107025
+ - Distinct shared K-mers: 6092315526
+
+Distance between spectra 1 and 2 (all k-mers):
+ - Manhattan distance: 1.20519e+11
+ - Euclidean distance: 3.96111e+09
+ - Cosine distance: 0.979084
+ - Canberra distance: 248.527
+ - Jaccard distance: 0.881892
+
+Distance between spectra 1 and 2 (shared k-mers):
+ - Manhattan distance: 1.06464e+10
+ - Euclidean distance: 8.84043e+08
+ - Cosine distance: 0.362399
+ - Canberra distance: 250.993
+ - Jaccard distance: 0.932625
+

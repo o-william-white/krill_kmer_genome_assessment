@@ -1,0 +1,1 @@
+results/ascp/CL100121972_L02_read_1.fq.gz: OK

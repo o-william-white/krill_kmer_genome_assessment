@@ -1,0 +1,39 @@
+K-mer statistics for: 
+ - Hash 1: "results/jellyfish/reads.jf"
+ - Hash 2: "results/jellyfish/krill.hifiasm-assembly.jf"
+
+Total K-mers in: 
+ - Hash 1: 1311974011153
+ - Hash 2: 30221088357
+
+Distinct K-mers in:
+ - Hash 1: 136659941598
+ - Hash 2: 11726689533
+
+Total K-mers only found in:
+ - Hash 1: 1064139274876
+ - Hash 2: 17267787748
+
+Distinct K-mers only found in:
+ - Hash 1: 132685613055
+ - Hash 2: 3779629401
+
+Shared K-mers:
+ - Total shared found in hash 1: 247834736277
+ - Total shared found in hash 2: 6479672627
+ - Distinct shared K-mers: 3974328543
+
+Distance between spectra 1 and 2 (all k-mers):
+ - Manhattan distance: 1.24933e+11
+ - Euclidean distance: 3.97363e+09
+ - Cosine distance: 0.983545
+ - Canberra distance: 247.405
+ - Jaccard distance: 0.914191
+
+Distance between spectra 1 and 2 (shared k-mers):
+ - Manhattan distance: 6.33111e+09
+ - Euclidean distance: 2.6888e+09
+ - Cosine distance: 0.205804
+ - Canberra distance: 247.557
+ - Jaccard distance: 0.886724
+

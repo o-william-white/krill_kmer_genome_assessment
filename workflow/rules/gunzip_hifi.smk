@@ -1,6 +1,6 @@
 rule gunzip_hifi:
     input:
-        "../data_krill_chromosome_assemblies/krill.hifiasm-assembly.fa.gz"
+        "../data_krill_chromosome_assemblies/seqkit_sliding/krill.hifiasm-assembly_w2g_rename.fa.bgz"
     output:
         temp("results/gunzip_hifi/krill.hifiasm-assembly.fa")
     log:
