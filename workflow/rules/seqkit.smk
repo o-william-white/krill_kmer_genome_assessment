@@ -1,10 +1,10 @@
 rule seqkit_stats:
     input:
-        fastx="results/ascp/{sample}.fastq.gz",
+        fastx="results/zcat_reads/reads.fastq",
     output:
-        stats="results/seqkit_stats/{sample}.tsv",
+        stats="results/seqkit_stats/reads.tsv",
     log:
-        "logs/seqkit_stats/{sample}.log",
+        "logs/seqkit_stats/reads.log",
     params:
         command="stats",
         extra="--all --tabular",

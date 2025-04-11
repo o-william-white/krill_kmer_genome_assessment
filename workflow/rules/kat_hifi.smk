@@ -1,9 +1,12 @@
 rule kat_hifi:
     input:
-        ccs="results/jellyfish/ccs.jf",
-        gen="results/jellyfish/krill.hifiasm-assembly.jf"
+        reads="results/jellyfish/reads.jf",
+        genome="results/jellyfish/krill.hifiasm-assembly.jf"
     output:
+        "results/kat_hifi/kat.dist_analysis.json",
+        "results/kat_hifi/kat-main.mx",
         "results/kat_hifi/kat-main.mx.spectra-cn.png",
+        "results/kat_hifi/kat.stats",
     conda:
         "../envs/kat.yaml"
     log:
@@ -14,7 +17,6 @@ rule kat_hifi:
         kat comp \
             -t 6 \
             -o results/kat_hifi/kat \
-            {input.ccs} \
-            {input.gen} &> {log}
+            {input.reads} \
+            {input.genome} &> {log}
         """
-

@@ -1,9 +1,2 @@
-# Set up conda env
-```
-# setup conda env
-conda env create -n sm_hifi_kmer -f workflow/envs/conda_env.yaml
-conda config --set channel_priority flexible
-```
-
-Note that the jellyfish wrapper uses conda defaults so causes an error on crop diversity cluster. 
+Comparison of Antarctic Krill chromosome and hifi assemblies using KAT comp. Analysis was written in snakemake but I ran the jellyfish and KAT comp steps via SLURM. Only plot outputs retained. 
 

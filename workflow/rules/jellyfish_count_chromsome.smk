@@ -4,11 +4,11 @@ rule jellyfish_count_chromosome:
     output:
         "results/jellyfish/krill.chromosome.jf",
     log:
-        "logs/jellyfish/krill.chromosome.log",
-    conda:
-        "../envs/kat.yaml"
+        "logs/jellyfish/count_krill.chromosome.log",
+    params:
+        kmer_length=27,
+        size="100M",
     threads: 6
-    shell:
-        """
-        kat_jellyfish count -m 27 -s 100M --disk -t 6 -C -o {output} {input} &> {log}
-        """
+    wrapper:
+        "v5.8.3/bio/jellyfish/count"
+

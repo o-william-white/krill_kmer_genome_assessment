@@ -22,11 +22,14 @@ else:
 def get_ftp_path(wildcards):
     return sample_data.loc[wildcards.sample, "ftp_path"]
 
-def get_ccs(wildcards):
-    return sample_data.loc[wildcards.sample, "ccs"]
+def get_forward(wildcards):
+    return sample_data.loc[wildcards.sample, "forward"]
 
-def get_ccs_md5(wildcards):
-    return sample_data.loc[wildcards.sample, "ccs_md5"]
+def get_reverse(wildcards):
+    return sample_data.loc[wildcards.sample, "reverse"]
 
+def get_forward_md5(wildcards):
+    return sample_data.loc[wildcards.sample, "forward_md5"]
 
-
+def get_reverse_md5(wildcards):
+    return sample_data.loc[wildcards.sample, "reverse_md5"]

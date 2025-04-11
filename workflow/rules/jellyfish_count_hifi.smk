@@ -4,11 +4,10 @@ rule jellyfish_count_hifi:
     output:
         "results/jellyfish/krill.hifiasm-assembly.jf",
     log:
-        "logs/jellyfish/krill.hifiasm-assembly.log",
-    conda:
-        "../envs/kat.yaml"
+        "logs/jellyfish/count_krill.hifiasm-assembly.log",
+    params:
+        kmer_length=27,
+        size="100M",
     threads: 6
-    shell:
-        """
-        kat_jellyfish count -m 27 -s 100M --disk -t 6 -C -o {output} {input} &> {log}
-        """
+    wrapper:
+        "v5.8.3/bio/jellyfish/count"
